@@ -6,7 +6,8 @@ Write-Host $site
 
 git clone $site
 
-$site -match "(\w+)$"
-$folder = (Get-Item -Path '.\').FullName + "\" + $Matches[0]
+$devnull = $site -match "(/.+)+/(.+).git$"
+$folder = (Get-Item -Path '.\').FullName + "\" + $Matches[2]
 
 Set-Location -Path $folder
+code .
