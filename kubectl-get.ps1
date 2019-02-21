@@ -5,4 +5,4 @@ param(
   [alias("n")]$namespace = "kube-system"
 )
 
-kubectl get $resource -n $namespace -o json | ConvertFrom-Json | Select-Object -ExpandProperty item
+kubectl get $resource -n $namespace -o json | ConvertFrom-Json | Select-Object -ExpandProperty items
