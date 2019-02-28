@@ -7,7 +7,7 @@ param(
 
 if ($build -eq "" -and $id -eq "")
 {
-  $data = az pipelines build list -o json | ConvertFrom-Json
+  $data = az pipelines release list -o json | ConvertFrom-Json
   $definitions = $data | Select-Object -ExpandProperty definition | Sort-Object -Property name -Unique
   
   foreach ($definition in $definitions)
