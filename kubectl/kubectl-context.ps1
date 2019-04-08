@@ -14,4 +14,8 @@ if ($args[0] -eq "--list")
 }
 
 kubectl config use-context $args[0]
-kubectl proxy
+
+$jobs = Get-Job | Where-Object {$_.Name.StartsWith("kubectl-proxy")} | Select-Object -ExpandProperty Id
+$jobs | ForEach-Object { remove-job -InstanceId $_ -Force }
+#kubectl proxy
+$job = Start-Job -Name "kubectl-proxy" -ScriptBlock {kubectl proxy}
