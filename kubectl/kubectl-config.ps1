@@ -38,8 +38,7 @@ foreach ($context in $contexts)
 
 if ($test -eq $true)
 {
-    kubectl config use-context $currentContext
-    kubectl proxy
+    kubectl-context "$currentContext"
 }
 else 
 {

@@ -23,3 +23,5 @@ if ($jobs.count -ne 0)
     #kubectl proxy
     $job = Start-Job -Name "kubectl-proxy" -ScriptBlock {kubectl proxy}
 }
+
+exit 0 
