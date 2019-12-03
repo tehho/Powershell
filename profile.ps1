@@ -1,4 +1,4 @@
-Set-Location -Path C:/Project
+Set-Location -Path C:/project
 
 function kubectl-context {
   param (
@@ -50,3 +50,5 @@ Set-Alias kn kubectl-namespace
 Set-Alias kgpo kubectl-get-pods
 
 Set-Alias k kubectl
+
+Set-Alias tf terrform
